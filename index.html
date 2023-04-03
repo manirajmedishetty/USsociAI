@@ -11,13 +11,19 @@
     <script src="fuzzyset.js"></script>
 
     <style>
+      header {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+		}
       body {
   background-image: url('https://png.pngitem.com/pimgs/s/10-103791_map-usa-united-states-america-geography-map-of.png');
   background-size: cover;
 
 }
       #voice-input-btn {
-        background-color: #4CAF50;
+        background-color: #171817;
         border: none;
         color: rgb(220, 120, 150);
         padding: 10px;
@@ -39,13 +45,19 @@
     </style>
   </head>
   <body>
+    <header>
     <h1>Welcome to USsociAI</h1>
+  </header>
+    <p><center><font size = "+2" >This is an intelligent agent that allows users to find the cities and capital cities of
+      the states in US.</font></center></p>
     <h2>Ask a Question</h2>
-    <div id="answer"></div>
-    <button id="voice-input-btn"><i class="fa fa-microphone"></i></button>
-    <input type="text" id="text-input" placeholder="Type your question...">
+    <div class="text-center">
+    <button id="voice-input-btn"><i class="fa fa-microphone"></i></button><br>
+    <input type="text" id="text-input" placeholder="Type your question here..."><br><br>
     <button id="submit-btn">Submit</button>
     <div id="answer-box"></div>
+    <div id="answer"></div>
+  </div>
     <script>
       
       var isClose=true;
