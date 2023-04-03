@@ -85,7 +85,20 @@
             "    capital(richmond, virginia).\n" +
             "    capital(denver, colarado).\n" +
             "    city(austin, texas):- capital(austin, texas).\n" +
-            "    city(dallas, texas).";
+	    "    city(olympia, washington):- capital(olympia, washington).\n" +
+	    "    city(pheonix, arizona):- capital(pheonix, arizona).\n" +
+	    "    city(topeka, kansas):- capital(topeka, kansas).\n" +
+	    "    city(columbus, ohio):- capital(columbus, ohio).\n" +
+	    "    city(richmond, virginia):- capital(richmond, virginia).\n" +
+	    "    city(denver, colarado):- capital(denver, colarado).\n" +
+	    "    city(dallas, texas).\n" +
+	    "    city(vancouver, washington).\n" +
+	    "    city(lubbock, texas).\n" +
+	    "    city(tempe, arizona).\n" +
+	    "    city(wichita, kansas).\n" +
+	    "    city(dayton, ohio).\n" +
+	    "    city(petersburg, virginia).\n" +
+            "    city(golden, colarado).";
         // sorts
         var contstring = editor.split("sorts\n")[1].split("predicates\n");
         var sortstring = contstring[0].split('.');
