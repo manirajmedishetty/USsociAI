@@ -7,57 +7,33 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    
     <script src="fuzzyset.js"></script>
-
-    <style>
-      header {
-			background-color: #333;
-			color: #fff;
-			padding: 10px;
-			text-align: center;
-		}
-      body {
-  background-image: url('https://png.pngitem.com/pimgs/s/10-103791_map-usa-united-states-america-geography-map-of.png');
-  background-size: cover;
-
-}
-      #voice-input-btn {
-        background-color: #171817;
-        border: none;
-        color: rgb(220, 120, 150);
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 50%;
-      }
-
-      #answer-box {
-        border: 1px solid black;
-        padding: 10px;
-        margin-top: 10px;
-        align-items: center;
-      }
-    </style>
+    <script src="fuzzyset.js"></script>
+    <script type="text/javascript" src="script_page.js"></script> 
   </head>
   <body>
     <header>
     <h1>Welcome to USsociAI</h1>
   </header>
-    <p><center><font size = "+2" >This is an intelligent agent that allows users to find the cities and capital cities of
-      the states in US.</font></center></p>
+  <div class="description-container">
+    <center class="description"><font size = "+2" >This is an intelligent agent that allows users to find the cities and capital cities of
+      the states in US.</font></center>
+    </div>
+    <div class="agent-container">
+      <img src="https://drive.google.com/uc?export=view&id=1hn8YTE49DnpmlScPP_x9ObmKoFZouT3I" width="60%">
+    
+    <div class="agent">
+      <img id="listen-img"src="https://drive.google.com/uc?export=view&id=1mJ0w9Tv1C0pjAJ4UJZuPm1VVSEavrhTJ" width="50%" height="30%">
     <h2>Ask the Agent a Question</h2>
     <div class="text-center">
     <button id="voice-input-btn"><i class="fa fa-microphone"></i></button><br>
     <input type="text" id="text-input" placeholder="Type your question here..."><br><br>
     <button id="submit-btn">Submit</button>
-    <div id="answer-box"></div>
+    <!-- <div id="answer-box"></div> -->
     <div id="answer"></div>
   </div>
+</div>
+</div>
     <script>
       
       var isClose=true;
@@ -163,8 +139,18 @@
       const textInput = document.getElementById('text-input');
       const submitBtn = document.getElementById('submit-btn');
       const answerBox = document.getElementById('answer-box');
+      const listenImg = document.getElementById('listen-img');
+
+      textInput.onfocus = function(){
+        listenImg.src = "https://drive.google.com/uc?export=view&id=1QfowTRWa3S4tkxCGosvi4OES3r-XtNZT";
+      }
+
+      textInput.onblur = function(){
+        listenImg.src = "https://drive.google.com/uc?export=view&id=1mJ0w9Tv1C0pjAJ4UJZuPm1VVSEavrhTJ";
+      }
 
       submitBtn.addEventListener('click', () => {
+        listenImg.src = "https://drive.google.com/uc?export=view&id=1mJ0w9Tv1C0pjAJ4UJZuPm1VVSEavrhTJ";
         const question = textInput.value;
         if (question.trim() === '') {
           answerBox.innerHTML = 'Please ask a question.';
@@ -174,7 +160,7 @@
         trim_script = trim_script.filter(f => !stopwords.includes(f));
         var queryQues = a.get(trim_script.join(" "), null, 0.5); 
         getAnswer(queryQues);
-        
+        textInput.value = '';
       });
 
       // Handle speech recognition
@@ -192,6 +178,7 @@
 
       // Handle click on voice input button     
       function startSpeechRecognition() {
+        listenImg.src = "https://drive.google.com/uc?export=view&id=1zxUAJAAFIaqxa3s7PrZnxd2t7RL1_bdv";
         recognition.start();
       }
       voiceBtn.addEventListener('click', startSpeechRecognition);
@@ -218,7 +205,7 @@
                 };
           
           console.log(data)
-          
+          listenImg.src = "https://drive.google.com/uc?export=view&id=1JYf_rQp87QH_4TmeKvROHgS0KskhbzzR";
           
           
           $.ajax({
