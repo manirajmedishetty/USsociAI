@@ -75,3 +75,55 @@ button i.fa {
   display: none; /* add this line */
 }
 
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+  body {
+background-size: cover;
+    display: flex;
+    flex-direction: column;
+    background-color: #dcdcdc;
+}
+.description-container{
+padding: 10px;
+}
+.description{
+display: flex;
+}
+  #voice-input-btn {
+    background-color: #171817;
+    border: none;
+    color: rgb(220, 120, 150);
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+
+  #answer-box {
+    border: 1px solid black;
+    padding: 10px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  .agent-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+  }
+  .agent{
+    display: flex;
+flex-direction: column;
+align-items: center;
+border: 7px solid whitesmoke;
+margin-right: 4%;
+  }
